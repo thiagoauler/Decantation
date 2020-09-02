@@ -8,5 +8,16 @@
 
 import Foundation
 
-print("Hello, World!")
+if CommandLine.argc == 1
+{
+    print("Database required.")
+}
 
+let datFilePath = CommandLine.arguments[1]
+
+if !FileManager.default.fileExists(atPath: datFilePath)
+{
+    print("Database does not exist.")
+}
+
+print("Hello, World!")
