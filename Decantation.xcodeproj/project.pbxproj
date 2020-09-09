@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF141CEF250918DE001BEEBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF141CEE250918DE001BEEBF /* String.swift */; };
 		AF1909DB250713EC00694007 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DA250713EC00694007 /* Release.swift */; };
 		AF1909DD250714E500694007 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DC250714E500694007 /* Rom.swift */; };
 		AF1AF56F24FFD4E900422D6C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AF56E24FFD4E900422D6C /* main.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF141CEE250918DE001BEEBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AF1909DA250713EC00694007 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
 		AF1909DC250714E500694007 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
 		AF1AF56B24FFD4E900422D6C /* Decantation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Decantation; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			children = (
 				AF144FEB2507107A00998CF2 /* DatabaseXML */,
 				AF1AF56E24FFD4E900422D6C /* main.swift */,
+				AF141CEE250918DE001BEEBF /* String.swift */,
 			);
 			path = Decantation;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF141CEF250918DE001BEEBF /* String.swift in Sources */,
 				AF86F12B250032C800309C7B /* Parser.swift in Sources */,
 				AF1909DB250713EC00694007 /* Release.swift in Sources */,
 				AFABC6F22501043600824FA0 /* Game.swift in Sources */,

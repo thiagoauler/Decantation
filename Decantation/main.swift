@@ -81,7 +81,6 @@ func isEligible(database: [String: Game], game: Game, regions: [String]) -> Bool
     return false
 }
 
-
 if CommandLine.argc == 1
 {
     print("Database required.")
@@ -94,12 +93,12 @@ if !FileManager.default.fileExists(atPath: datFilePath)
     print("Database does not exist.")
 }
 
-let database = Parser.perform(datFilePath: datFilePath)
+let database = Parser.createDatabase(datFilePath: datFilePath)
 
 var ignoredGames = [Game]()
 var validGames = [String: Game]()
 
-for currentGame in database.values
+for currentGame in database
 {
     if isEligible(database: validGames, game: currentGame, regions: ["Brazil", "World", "USA", "Europe"])
     {
@@ -145,14 +144,4 @@ print("\nDatabase:")
 for game in validGames.values.sorted(by: { return $0.name < $1.name })
 {
     print(game.name, "-", game.rom.crc)
-}
-
-extension String
-{
-    static func ~= (lhs: String, rhs: String) -> Bool
-    {
-        guard let regex = try? NSRegularExpression(pattern: rhs) else { return false }
-        let range = NSRange(location: 0, length: lhs.utf16.count)
-        return regex.firstMatch(in: lhs, options: [], range: range) != nil
-    }
 }

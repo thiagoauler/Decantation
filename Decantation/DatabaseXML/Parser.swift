@@ -10,49 +10,40 @@ import Foundation
 
 class Parser : NSObject, XMLParserDelegate
 {
-    var gameName: String = ""
-    
-    // [gameName : Game]
-    var dataBase: [String: Game] = [String: Game]()
+    var currentGame = Game()
+    var dataBase = [Game]()
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String])
     {
         switch elementName
         {
         case "game":
-            let game = Game()
-            game.name = attributeDict["name"]!
-            game.cloneof = attributeDict["cloneof"]
+            currentGame = Game()
+            currentGame.name = attributeDict["name"]!
+            currentGame.cloneof = attributeDict["cloneof"]
             
-            gameName = game.name
-            dataBase[gameName] = game
+            dataBase.append(currentGame)
         case "release":
-            if let game = dataBase[gameName]
-            {
-                let release = Release()
-                release.name = attributeDict["name"]!
-                release.region = attributeDict["region"]!
-                
-                game.releases.append(release)
-            }
+            let release = Release()
+            release.name = attributeDict["name"]!
+            release.region = attributeDict["region"]!
+            
+            currentGame.releases.append(release)
         case "rom":
-            if let game = dataBase[gameName]
-            {
-                let rom = Rom()
-                rom.name = attributeDict["name"]!
-                rom.size = attributeDict["size"]!
-                rom.crc = attributeDict["crc"]!
-                rom.md5 = attributeDict["md5"]!
-                rom.sha1 = attributeDict["sha1"]!
+            let rom = Rom()
+            rom.name = attributeDict["name"]!
+            rom.size = attributeDict["size"]!
+            rom.crc = attributeDict["crc"]!
+            rom.md5 = attributeDict["md5"]!
+            rom.sha1 = attributeDict["sha1"]!
                 
-                game.rom = rom
-            }
+            currentGame.rom = rom
         default:
             break
         }
     }
     
-    class func perform(datFilePath path: String) -> [String: Game]
+    class func createDatabase(datFilePath path: String) -> [Game]
     {
         let url = NSURL(fileURLWithPath: path) as URL
         let parser = Parser()
