@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Game.swift
 //  Decantation
 //
 //  Created by Thiago Auler dos Santos on 03/09/2020.

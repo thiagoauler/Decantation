@@ -1,5 +1,5 @@
 //
-//  DatParser.swift
+//  Parser.swift
 //  Decantation
 //
 //  Created by Thiago Auler dos Santos on 02/09/2020.
