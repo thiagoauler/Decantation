@@ -30,23 +30,21 @@ class Parser : NSObject, XMLParserDelegate
             
             currentGame.releases.append(release)
         case "rom":
-            let rom = Rom()
-            rom.name = attributeDict["name"]!
-            rom.size = attributeDict["size"]!
-            rom.crc = attributeDict["crc"]!
-            rom.md5 = attributeDict["md5"]!
-            rom.sha1 = attributeDict["sha1"]!
-                
-            currentGame.rom = rom
+            currentGame.rom.name = attributeDict["name"]!
+            currentGame.rom.size = attributeDict["size"]!
+            currentGame.rom.crc = attributeDict["crc"]!
+            currentGame.rom.md5 = attributeDict["md5"]!
+            currentGame.rom.sha1 = attributeDict["sha1"]!
         default:
             break
         }
     }
     
-    class func createDatabase(datFilePath path: String) -> [Game]
+    class func createDatabase(databasePath path: String) -> [Game]
     {
-        let url = NSURL(fileURLWithPath: path) as URL
         let parser = Parser()
+        
+        let url = NSURL(fileURLWithPath: path) as URL
         let xmlParser = XMLParser(contentsOf: url)!
         xmlParser.delegate = parser
         xmlParser.parse()

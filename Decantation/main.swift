@@ -93,7 +93,7 @@ if !FileManager.default.fileExists(atPath: datFilePath)
     print("Database does not exist.")
 }
 
-let database = Parser.createDatabase(datFilePath: datFilePath)
+let database = Parser.createDatabase(databasePath: datFilePath)
 
 var ignoredGames = [Game]()
 var validGames = [String: Game]()
@@ -131,11 +131,11 @@ for game in ignoredGames.sorted(by: { return $0.name < $1.name })
     {
         if let cloneof = game.cloneof
         {
-            print(" -", cloneof)
+            print(" >", cloneof)
         }
         else
         {
-            print(" - [null]")
+            print(" > [null]")
         }
     }
 }
