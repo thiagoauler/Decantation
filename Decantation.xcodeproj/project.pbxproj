@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF141CEF250918DE001BEEBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF141CEE250918DE001BEEBF /* String.swift */; };
+		AF141CF125091F2B001BEEBF /* Decanter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF141CF025091F2B001BEEBF /* Decanter.swift */; };
 		AF1909DB250713EC00694007 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DA250713EC00694007 /* Release.swift */; };
 		AF1909DD250714E500694007 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DC250714E500694007 /* Rom.swift */; };
 		AF1AF56F24FFD4E900422D6C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AF56E24FFD4E900422D6C /* main.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		AF141CEE250918DE001BEEBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AF141CF025091F2B001BEEBF /* Decanter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decanter.swift; sourceTree = "<group>"; };
 		AF1909DA250713EC00694007 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
 		AF1909DC250714E500694007 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
 		AF1AF56B24FFD4E900422D6C /* Decantation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Decantation; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 				AF1909DC250714E500694007 /* Rom.swift */,
 				AF1AF56E24FFD4E900422D6C /* main.swift */,
 				AF141CEE250918DE001BEEBF /* String.swift */,
+				AF141CF025091F2B001BEEBF /* Decanter.swift */,
 			);
 			path = Decantation;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 				AF1909DB250713EC00694007 /* Release.swift in Sources */,
 				AFABC6F22501043600824FA0 /* Game.swift in Sources */,
 				AF1909DD250714E500694007 /* Rom.swift in Sources */,
+				AF141CF125091F2B001BEEBF /* Decanter.swift in Sources */,
 				AF1AF56F24FFD4E900422D6C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,16 +39,4 @@ class Parser : NSObject, XMLParserDelegate
             break
         }
     }
-    
-    class func createDatabase(databasePath path: String) -> [Game]
-    {
-        let parser = Parser()
-        
-        let url = NSURL(fileURLWithPath: path) as URL
-        let xmlParser = XMLParser(contentsOf: url)!
-        xmlParser.delegate = parser
-        xmlParser.parse()
-        
-        return parser.dataBase
-    }
 }

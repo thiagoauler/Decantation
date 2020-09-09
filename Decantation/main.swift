@@ -8,78 +8,7 @@
 
 import Foundation
 
-func isEligible(database: [String: Game], game: Game, regions: [String]) -> Bool
-{
-    if game.isUnreleased()
-    {
-        game.name = "[UNOFFICIAL] " + game.name
-        return false
-    }
-    
-    if game.isDigital()
-    {
-        game.name = "[DIGITAL] " + game.name
-        return false
-    }
-    
-    if game.isCollection()
-    {
-        game.name = "[PACK] " + game.name
-        return false
-    }
-    
-    if game.isBios()
-    {
-        return false
-    }
-    
-    let currentGamePriority = game.getRegionPriority(from: regions)
-    
-    if let existingGame = database[game.key]
-    {
-        //in case there is some game whith the provided key,
-        //we need to match the region...
-        let existingGamePriority = existingGame.getRegionPriority(from: regions)
-        
-        if currentGamePriority < existingGamePriority
-        {
-            // the current game region has higher priority over existing game region
-            return true
-        }
-        
-        if currentGamePriority == existingGamePriority
-        {
-            // both game has equal priority...
-            //... first, we compare if the existing game is the actual parent of the release
-            if game.cloneof == existingGame.name
-            {
-                return false
-            }
-            
-            //... then, we compare the other way around
-            if existingGame.cloneof == game.name
-            {
-                return true
-            }
-            
-            //... finally, let's compare the names
-            if game.name > existingGame.name
-            {
-                return true
-            }
-        }
-    }
-    else
-    {
-        //... otherwise, we insert it!
-        if currentGamePriority < regions.count
-        {
-            return true
-        }
-    }
-    
-    return false
-}
+
 
 if CommandLine.argc == 1
 {
@@ -93,38 +22,11 @@ if !FileManager.default.fileExists(atPath: datFilePath)
     print("Database does not exist.")
 }
 
-let database = Parser.createDatabase(databasePath: datFilePath)
-
-var ignoredGames = [Game]()
-var validGames = [String: Game]()
-
-for currentGame in database
-{
-    if isEligible(database: validGames, game: currentGame, regions: ["Brazil", "World", "USA", "Europe"])
-    {
-        if let previousValidGame = validGames[currentGame.key]
-        {
-            previousValidGame.cloneof = currentGame.name
-            ignoredGames.append(previousValidGame)
-        }
-        validGames[currentGame.key] = currentGame
-    }
-    else
-    {
-        if let currentValidGame = validGames[currentGame.key]
-        {
-            currentGame.cloneof = currentValidGame.name
-        }
-        else
-        {
-            currentGame.cloneof = nil
-        }
-        ignoredGames.append(currentGame)
-    }
-}
+let decanter = Decanter(databasePath: datFilePath)
+decanter.process(selectedRegions: ["Brazil", "World", "USA", "Europe"])
 
 print("Ignored:")
-for game in ignoredGames.sorted(by: { return $0.name < $1.name })
+for game in decanter.ignoredGames.sorted(by: { return $0.name < $1.name })
 {
     print(game.name)
     if game.isProper()
@@ -141,7 +43,7 @@ for game in ignoredGames.sorted(by: { return $0.name < $1.name })
 }
 
 print("\nDatabase:")
-for game in validGames.values.sorted(by: { return $0.name < $1.name })
+for game in decanter.validGames.values.sorted(by: { return $0.name < $1.name })
 {
     print(game.name, "-", game.rom.crc)
 }
