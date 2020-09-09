@@ -48,17 +48,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF144FEB2507107A00998CF2 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				AFABC6F12501043600824FA0 /* Game.swift */,
-				AF86F12A250032C800309C7B /* Parser.swift */,
-				AF1909DA250713EC00694007 /* Release.swift */,
-				AF1909DC250714E500694007 /* Rom.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		AF1AF56224FFD4E800422D6C = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +67,10 @@
 		AF1AF56D24FFD4E900422D6C /* Decantation */ = {
 			isa = PBXGroup;
 			children = (
-				AF144FEB2507107A00998CF2 /* Database */,
+				AFABC6F12501043600824FA0 /* Game.swift */,
+				AF86F12A250032C800309C7B /* Parser.swift */,
+				AF1909DA250713EC00694007 /* Release.swift */,
+				AF1909DC250714E500694007 /* Rom.swift */,
 				AF1AF56E24FFD4E900422D6C /* main.swift */,
 				AF141CEE250918DE001BEEBF /* String.swift */,
 			);
