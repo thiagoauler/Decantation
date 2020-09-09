@@ -29,6 +29,9 @@ class Decanter
     
     func process(selectedRegions: [String])
     {
+        ignoredGames.removeAll()
+        validGames.removeAll()
+        
         for currentGame in database
         {
             if isEligible(game: currentGame, regions: selectedRegions)
