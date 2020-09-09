@@ -64,8 +64,28 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/thiago/Downloads/Atari\ -\ 2600\ (Parent-Clone)\ (20200514-091155).dat"
+            argument = "&quot;/Users/thiago/Downloads/Atari - 2600 (Parent-Clone) (20200514-091155).dat&quot;"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/thiago/Downloads/Nintendo - Nintendo Entertainment System (Parent-Clone) (20200903-120416).dat&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/thiago/Downloads/Nintendo - Super Nintendo Entertainment System (Combined) (Parent-Clone) (20200904-062958).dat&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/thiago/Downloads/Sega - Master System - Mark III (Parent-Clone) (20200429-062328).dat&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/thiago/Downloads/Sega - Mega Drive - Genesis (Parent-Clone) (20200822-054519).dat&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/thiago/Downloads/Sega - 32X (Parent-Clone) (20191204-183941).dat&quot;"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

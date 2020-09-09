@@ -128,17 +128,24 @@ print("Ignored:")
 for game in ignoredGames.sorted(by: { return $0.name < $1.name })
 {
     print(game.name)
-    if let cloneof = game.cloneof
+    if game.isProper()
     {
-        print(" -", cloneof)
+        if let cloneof = game.cloneof
+        {
+            print(" -", cloneof)
+        }
+        else
+        {
+            print(" - [null]")
+        }
     }
 }
 
-/*print("\nDatabase:")
+print("\nDatabase:")
 for game in validGames.values.sorted(by: { return $0.name < $1.name })
 {
-    print(game.name)
-}*/
+    print(game.name, "-", game.rom.crc)
+}
 
 extension String
 {

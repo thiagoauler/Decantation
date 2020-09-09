@@ -84,4 +84,12 @@ class Game
     {
         return self.name ~= "\\[BIOS\\]"
     }
+    
+    func isProper() -> Bool
+    {
+        return !self.isBios() &&
+               !self.isDigital() &&
+               !self.isCollection() &&
+               !self.isUnreleased()
+    }
 }
