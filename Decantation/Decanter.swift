@@ -60,71 +60,51 @@ class Decanter
     
     func isEligible(game: Game, regions: [String]) -> Bool
     {
-        if game.isUnreleased()
+        if game.isProper()
         {
-            game.name = "[UNOFFICIAL] " + game.name
-            return false
-        }
-        
-        if game.isDigital()
-        {
-            game.name = "[DIGITAL] " + game.name
-            return false
-        }
-        
-        if game.isCollection()
-        {
-            game.name = "[PACK] " + game.name
-            return false
-        }
-        
-        if game.isBios()
-        {
-            return false
-        }
-        
-        let currentGamePriority = game.getRegionPriority(from: regions)
-        
-        if let existingGame = validGames[game.key]
-        {
-            //in case there is some game whith the provided key,
-            //we need to match the region...
-            let existingGamePriority = existingGame.getRegionPriority(from: regions)
+            let currentGamePriority = game.getRegionPriority(from: regions)
             
-            if currentGamePriority < existingGamePriority
+            if let existingGame = validGames[game.key]
             {
-                // the current game region has higher priority over existing game region
-                return true
-            }
-            
-            if currentGamePriority == existingGamePriority
-            {
-                // both game has equal priority...
-                //... first, we compare if the existing game is the actual parent of the release
-                if game.cloneof == existingGame.name
-                {
-                    return false
-                }
+                //in case there is some game whith the provided key,
+                //we need to match the region...
+                let existingGamePriority = existingGame.getRegionPriority(from: regions)
                 
-                //... then, we compare the other way around
-                if existingGame.cloneof == game.name
+                if currentGamePriority < existingGamePriority
                 {
+                    // the current game region has higher priority over existing game region
                     return true
                 }
                 
-                //... finally, let's compare the names
-                if game.name > existingGame.name
+                if currentGamePriority == existingGamePriority
+                {
+                    // both game has equal priority...
+                    //... first, we compare if the existing game is the actual parent of the release
+                    if game.cloneof == existingGame.name
+                    {
+                        return false
+                    }
+                    
+                    //... then, we compare the other way around
+                    if existingGame.cloneof == game.name
+                    {
+                        return true
+                    }
+                    
+                    //... finally, let's compare the names
+                    if game.name > existingGame.name
+                    {
+                        return true
+                    }
+                }
+            }
+            else
+            {
+                //... otherwise, we insert it!
+                if currentGamePriority < regions.count
                 {
                     return true
                 }
-            }
-        }
-        else
-        {
-            //... otherwise, we insert it!
-            if currentGamePriority < regions.count
-            {
-                return true
             }
         }
         

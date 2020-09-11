@@ -72,14 +72,6 @@ class Game
                self.isFrom(region: "Virtual Console")
     }
     
-    func isCollection() -> Bool
-    {
-        return self.name ~= "\\d* in 1" ||
-               self.name ~= "\\d*-in-1" ||
-               self.name ~= "\\d*-Pak" ||
-               self.name ~= ".* \\+ .*" && !(self.name ~= "Sonic")
-    }
-    
     func isBios() -> Bool
     {
         return self.name ~= "\\[BIOS\\]"
@@ -89,7 +81,6 @@ class Game
     {
         return !self.isBios() &&
                !self.isDigital() &&
-               !self.isCollection() &&
                !self.isUnreleased()
     }
 }

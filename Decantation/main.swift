@@ -28,22 +28,25 @@ decanter.process(selectedRegions: ["Brazil", "World", "USA", "Europe"])
 print("Ignored:")
 for game in decanter.ignoredGames.sorted(by: { return $0.name < $1.name })
 {
-    print(game.name)
     if game.isProper()
     {
         if let cloneof = game.cloneof
         {
-            print(" >", cloneof)
+            print(game.name, ">", cloneof)
         }
         else
         {
-            print(" > [null]")
+            print(game.name, "> [null]")
         }
+    }
+    else
+    {
+        print("**", game.name)
     }
 }
 
 print("\nDatabase:")
 for game in decanter.validGames.values.sorted(by: { return $0.name < $1.name })
 {
-    print(game.name, "-", game.rom.crc)
+    print(game.rom.name, "-", game.rom.crc)
 }
