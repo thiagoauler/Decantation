@@ -11,6 +11,7 @@ import Foundation
 class Decanter
 {
     var database: [Game]
+    var databaseName = ""
     
     var ignoredGames = [Game]()
     var validGames = [String: Game]()
@@ -25,6 +26,7 @@ class Decanter
         xmlParser.parse()
         
         database = parser.dataBase
+        databaseName = parser.databaseName
     }
     
     func process(selectedRegions: [String])

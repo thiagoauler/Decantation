@@ -10,6 +10,7 @@ import Foundation
 
 class Parser : NSObject, XMLParserDelegate
 {
+    var databaseName = ""
     var currentGame = Game()
     var dataBase = [Game]()
     
@@ -17,6 +18,8 @@ class Parser : NSObject, XMLParserDelegate
     {
         switch elementName
         {
+        case "name":
+            databaseName = "header/name"
         case "game":
             currentGame = Game()
             currentGame.name = attributeDict["name"]!
@@ -37,6 +40,19 @@ class Parser : NSObject, XMLParserDelegate
             currentGame.rom.sha1 = attributeDict["sha1"]!
         default:
             break
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String)
+    {
+        if databaseName == "header/name"
+        {
+            databaseName = string
+            if let index = databaseName.firstIndex(of: "(")
+            {
+                databaseName = String(databaseName[..<index])
+            }
+            databaseName = databaseName.trimmingCharacters(in: [" "])
         }
     }
 }
