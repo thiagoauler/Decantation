@@ -27,7 +27,7 @@ class Parser : NSObject, XMLParserDelegate
             
             dataBase.append(currentGame)
         case "release":
-            let release = Release()
+            let release = Game.Release()
             release.name = attributeDict["name"]!
             release.region = attributeDict["region"]!
             

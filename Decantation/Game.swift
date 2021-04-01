@@ -83,4 +83,19 @@ class Game
                !self.isDigital() &&
                !self.isUnreleased()
     }
+    
+    class Release
+    {
+        var name = ""
+        var region = ""
+    }
+    
+    class Rom
+    {
+        var name = ""
+        var size = ""
+        var crc  = ""
+        var md5  = ""
+        var sha1 = ""
+    }
 }

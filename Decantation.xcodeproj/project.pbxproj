@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		AF141CEF250918DE001BEEBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF141CEE250918DE001BEEBF /* String.swift */; };
 		AF141CF125091F2B001BEEBF /* Decanter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF141CF025091F2B001BEEBF /* Decanter.swift */; };
-		AF1909DB250713EC00694007 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DA250713EC00694007 /* Release.swift */; };
-		AF1909DD250714E500694007 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1909DC250714E500694007 /* Rom.swift */; };
 		AF1AF56F24FFD4E900422D6C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AF56E24FFD4E900422D6C /* main.swift */; };
-		AF86F12B250032C800309C7B /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF86F12A250032C800309C7B /* Parser.swift */; };
 		AFABC6F22501043600824FA0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABC6F12501043600824FA0 /* Game.swift */; };
+		AFC45CBD26163CB000BADBCE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC45CBC26163CB000BADBCE /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +29,10 @@
 /* Begin PBXFileReference section */
 		AF141CEE250918DE001BEEBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AF141CF025091F2B001BEEBF /* Decanter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decanter.swift; sourceTree = "<group>"; };
-		AF1909DA250713EC00694007 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
-		AF1909DC250714E500694007 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
 		AF1AF56B24FFD4E900422D6C /* Decantation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Decantation; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1AF56E24FFD4E900422D6C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		AF86F12A250032C800309C7B /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		AFABC6F12501043600824FA0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		AFC45CBC26163CB000BADBCE /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				AFABC6F12501043600824FA0 /* Game.swift */,
-				AF86F12A250032C800309C7B /* Parser.swift */,
-				AF1909DA250713EC00694007 /* Release.swift */,
-				AF1909DC250714E500694007 /* Rom.swift */,
+				AFC45CBC26163CB000BADBCE /* Parser.swift */,
 				AF1AF56E24FFD4E900422D6C /* main.swift */,
 				AF141CEE250918DE001BEEBF /* String.swift */,
 				AF141CF025091F2B001BEEBF /* Decanter.swift */,
@@ -107,11 +101,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Thiago Auler dos Santos";
 				TargetAttributes = {
 					AF1AF56A24FFD4E900422D6C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -121,6 +116,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AF1AF56224FFD4E800422D6C;
 			productRefGroup = AF1AF56C24FFD4E900422D6C /* Products */;
@@ -138,10 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF141CEF250918DE001BEEBF /* String.swift in Sources */,
-				AF86F12B250032C800309C7B /* Parser.swift in Sources */,
-				AF1909DB250713EC00694007 /* Release.swift in Sources */,
 				AFABC6F22501043600824FA0 /* Game.swift in Sources */,
-				AF1909DD250714E500694007 /* Rom.swift in Sources */,
+				AFC45CBD26163CB000BADBCE /* Parser.swift in Sources */,
 				AF141CF125091F2B001BEEBF /* Decanter.swift in Sources */,
 				AF1AF56F24FFD4E900422D6C /* main.swift in Sources */,
 			);
@@ -176,6 +170,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -237,6 +232,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -268,20 +264,22 @@
 		AF1AF57324FFD4E900422D6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MKA3BYM4R9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		AF1AF57424FFD4E900422D6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MKA3BYM4R9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
